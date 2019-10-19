@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+  
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+ 
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+    margin-right: 2px;
+}
+
+.navbar {
+    background-color: black;
+    min-height: 80px;
+}
+
+.navbar-brand {
+    color: aliceblue;
+    font-family: 'Merienda';
+    font-size: 22px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+@media only screen and (max-width: 968px) {
+    .navbar-brand {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+}
+
+.navbar-brand:hover {
+    color: #d4e157;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255);
+    font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d4e157;
+    background: black;
+}
+
+.navbar-nav .nav-link:focus {
+    color: #e0e0e0;
+    background: black;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler, button:focus {outline:0;}
+
+.dropdown-container {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Bottom of button */
+    right: 0; /* More to the left */
+    background-color: #2E2E2E;
+  }
+
+  .dropdown-menu > a {
+    color: #fff;
+    font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+  .dropdown-menu > a:hover, .dropdown-menu > a:focus {
+    background-color:black;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left: .5rem;
+        padding-right: 6rem;
+    }
+}
+

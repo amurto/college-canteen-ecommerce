@@ -1,0 +1,68 @@
+<section class="shopping-cart dark">
+    <div class="container">
+         <div class="block-heading">
+           <h2>MY&nbsp; CART</h2>
+         </div>
+         <% if(products!=null) { %>
+         <div class="content">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="items">
+            <% for(let i = 0; i < products.length; i++) { %>
+              <div class="product">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img class="img-fluid mx-auto d-block image" src="<%= products[i].item.imagePath %>">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="info">
+                      <div class="row">
+                        <div class="col-md-5 product-name">
+                          <div class="product-name">
+                            <a href="#"><%= products[i].item.title %></a>
+                          </div>
+                        </div>
+                        <div class="col-md-4 quantity">
+                          <label for="quantity">Quantity</label>
+                          <input id="quantity" type="number" value ="<%= products[i].qty %>" class="form-control quantity-input">
+                        </div>
+                        <div class="col-md-3 price">
+                          <span>&#x20b9 <%= products[i].price %></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <div class="summary">
+              <h3>Summary</h3>
+              <div class="summary-item"><span class="text">Subtotal</span><span class="price">&#x20b9 <%= totalPrice %></span></div>
+              <div class="summary-item"><span class="text">Discount</span><span class="price">&#x20b9 0</span></div>
+              <div class="summary-item"><span class="text">Shipping</span><span class="price">&#x20b9 0</span></div>
+              <div class="summary-item"><span class="text">Total</span><span class="price">&#x20b9 <%= totalPrice %></span></div>
+              <a id="checkout-btn" class="btn btn-primary btn-lg btn-block" href="/pay">PROCEED TO PAY</a>
+              <a id="cshop-btn" class="btn btn-primary btn-lg btn-block" href="/dashboard">CONTINUE SHOPPING</a>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <% } else { %>
+      <div class="container"> 
+    <div class="row"> 
+       <div style="height: 300px" class="col"><h2 id="no-items">No Items in CART</h2></div> 
+    </div> 
+    <div class="col mb-2">
+        <div class="row">
+            <div style="height: 100px" class="col-sm-12 col-md-6 text-center">
+              <a id="cshop-btn" class="btn btn-primary btn-lg btn-block" href="/dashboard">CONTINUE SHOPPING</a>
+            </div>
+        </div>
+ </div>
+</div>
+      <% } %>
+    </div>
+ </section>

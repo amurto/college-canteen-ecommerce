@@ -1,0 +1,32 @@
+{
+  "name": "NodeLogin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.0.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.1.0",
+    "ejs": "^1.0.0",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.16.2",
+    "mongoose": "^5.6.13",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "shortid": "^2.2.15",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}

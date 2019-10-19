@@ -1,0 +1,45 @@
+<section class="shopping-cart dark">
+    <div class="container">
+         <div class="block-heading">
+           <h2>CHECKOUT</h2>
+         </div>
+         <div class="content">
+        <div class="row">
+          <div class="col-md-12 col-lg-6">
+              <div class="summary">
+                  <h3>Summary</h3>
+                  <div class="summary-item"><span class="text">Subtotal</span><span class="price">&#x20b9 <%= totalPrice %></span></div>
+                  <div class="summary-item"><span class="text">Discount</span><span class="price">&#x20b9 0</span></div>
+                  <div class="summary-item"><span class="text">Shipping</span><span class="price">&#x20b9 0</span></div>
+                  <div class="summary-item"><span class="text">Total</span><span class="price">&#x20b9 <%= totalPrice %></span></div>
+                </div>
+          </div>
+          <div class="col-md-12 col-lg-6">
+            <div class="summary">
+                <h3>Enter&nbsp; Room&nbsp; Address</h3>
+                  <form action="/paywithpaytm" method="GET">
+                <p>
+                    <input type="text" id="t1" name="roomno" list="l1" required
+                           pattern="201|202|203|204|205|206">
+                           <label for="t1"><abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                    <datalist id="l1">
+                      <option>201</option>
+                      <option>202</option>
+                      <option>203</option>
+                      <option>204</option>
+                      <option>205</option>
+                      <option>206</option>
+                    </datalist>
+                  </p>
+                  <p>
+                      <button type= "submit" id="checkout-btn" class="btn btn-primary btn-lg btn-block">PROCEED TO PAY</button>
+                      <a id="cshop-btn" class="btn btn-primary btn-lg btn-block" href="#">BACK TO CART</a>
+                    </p>
+                </form>
+
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+ </section>

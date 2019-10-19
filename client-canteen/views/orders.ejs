@@ -1,0 +1,121 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3></h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="#"><i class="fas fa-user fa-fw"></i> PROFILE</a>
+            </li>
+            <li>
+                <a href="/users/orders"><i class="fas fa-dolly-flatbed fa-fw"></i> ORDERS</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-heart fa-fw"></i> FAVOURITES</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-question-circle fa-fw"></i> HELP</a>
+          </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="/users/logout" class="logout">LOGOUT</a>
+            </li>
+            <li>
+                <a href="/dashboard" class="continue">CONTINUE SHOPPING</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                </button>
+                <a class="navbar-brand" href="#">MY ORDERS</a>
+            </div>
+        </nav>
+        <% if(orders.length == 0) { %>
+          <h2 id="no-order">Oops! You havent ordered anything uptil now.</h2>
+        <% } else { %>
+        <!-- ORDER ITEM -->
+        <% orders.forEach(function(order) { %>
+        <div class="card">
+          <div class="card-header">
+            <% if(order.status == "ordered") { %>
+            <i class="fas fa-truck-loading" style="color:white"></i>&nbsp;Waiting for approval of the Order placed on <%= order.order_date %>
+            <% } else if(order.status == "prepared") { %>
+            <i class="fas fa-cloud-meatball" style="color:white"></i>&nbsp;Your food is being prepared and will be delivered in a few minutes.
+            <% } else if(order.status == "cancelled") { %>
+            <i class="fas fa-window-close" style="color:red"></i>&nbsp;Your Order was cancelled due to some reasons.
+            <% } else if(order.status == "delivered") { %>
+            <i class="fas fa-check-circle" style="color:green"></i>&nbsp;Successfully delivered to Room <%= order.Roomno %> on <%= order.delivery_date %>
+            <% } else { %>
+            Ignore
+            <% } %>
+          </div>
+          <div class="card-body">
+          <h4 class="card-title">ORDER ID&nbsp;<%= order.OrderId %></h4>
+          <section class="order-cart dark">
+            <div class="container">
+                 <div class="content">
+                <div class="row">
+                  <div class="col-md-12 col-lg-8">
+                    <div class="items">
+                        <%  order.items.forEach(function(item) { %>
+                            <div class="product">
+                                                    <div class="row">
+                                                      <div class="col-md-3">
+                                                        <img class="img-fluid mx-auto d-block image" src="<%= item.item.imagePath %>">
+                                                      </div>
+                                                      <div class="col-md-8">
+                                                        <div class="info">
+                                                          <div class="row">
+                                                            <div class="col-md-5 product-name">
+                                                              <div class="product-name">
+                                                                <a href="#"><%= item.item.title %></a>
+                                                                <div class="product-info">
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-4 quantity">
+                                                              <label for="quantity">Quantity</label><br>
+                                                              <label for="quantity"><%= item.qty %></label>
+                                                            </div>
+                                                            <div class="col-md-3 price">
+                                                              <span>&#x20b9 <%= item.price %></span>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                            <%  }); %>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-4">
+                    <div class="summary">
+                      <h3>Summary</h3>
+                      <div class="summary-item"><span class="text">Subtotal</span><span class="price">&#x20b9  <%= order.cart.totalPrice %></span></div>
+                      <div class="summary-item"><span class="text">Discount</span><span class="price">&#x20b9 0</span></div>
+                      <div class="summary-item"><span class="text">Shipping</span><span class="price">&#x20b9 0</span></div>
+                      <div class="summary-item"><span class="text">Total</span><span class="price">&#x20b9 <%= order.cart.totalPrice %></span></div>
+                      <a id="checkout-btn" class="btn btn-primary btn-lg btn-block" href="/add-order-to-cart/<%= order.OrderId %>">REORDER</a>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+         </section>
+          </div>
+      <%  }); %>
+      <% } %>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="col-sm-6 col-md-4">
+        <!-- Add bg-primary in form tag if want form background color-->
+        <!--text-white if want text color white-->
+        <% include ./partials/messages %>
+        <form action="/admins/login" class="shadow-lg p-4 text-black" method="POST">
+           <div class="form-group">
+              <i class="fas fa-user"></i>
+              <label for="email" class="pl-2 font-weight-bold">Email</label>
+              <input type="email" name="email" class="form-control" placeholder="Email">
+              <!--Add text-white below if want text color white-->
+           </div>
+           <div class="form-group">
+              <i class="fas fa-key"></i>
+              <label for="pass" class="pl-2 font-weight-bold">Password</label>
+              <input type="password" name="password" class="form-control" placeholder="Password">
+           </div>
+           <button type="submit" class="btn btn-outline-danger mt-3 btn-block shadow-sm font-weight-bold">Login</button>
+        </form>
+        <p class="lead mt-4">
+              <b>No Account? <a class="text-danger" href="/admins/register">Register</a></b>
+        </p>
+     </div>
+  

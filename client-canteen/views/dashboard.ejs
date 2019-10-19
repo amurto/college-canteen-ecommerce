@@ -1,0 +1,82 @@
+<li class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3></h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="/lunch"><i class="fas fa-utensils fa-fw"></i> LUNCH</a>
+            </li>
+            <li>
+                <a href="/snacks"><i class="fas fa-hamburger fa-fw"></i> SNACKS</a>
+            </li>
+            <li>
+                <a href="/beverages"><i class="fas fa-mug-hot fa-fw"></i> BEVERAGES</a>
+            </li>
+            <li>
+              <a href="/cold-drinks"><i class="fas fa-cocktail fa-fw"></i> COLD DRINKS</a>
+          </li>
+          <li>
+                  <a href="/desserts"><i class="fas fa-ice-cream fa-fw"></i> DESSERTS</a>
+              </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="/dashboard" class="logout">HOME</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="col">
+              <div class="row">
+              <% for(let i = 0; i < products.length; i++) { %>
+                  <div class="col-12 col-md-6 col-lg-4">
+                      <div class="card">
+                          <img class="card-img-top" src="<%= products[i].imagePath %>" alt="Card image cap">
+                          <div class="card-body">
+                              <h4 class="card-title"><a href=""><%= products[i].title %>&nbsp;</a>
+                                <% if(products[i].foodtype == "Non-Veg") { %>
+                                    <img src="https://img.icons8.com/color/30/000000/non-vegetarian-food-symbol.png">
+                                <% } else if (products[i].foodtype == "Veg") { %>
+                                    <img src="https://img.icons8.com/color/30/000000/vegetarian-food-symbol.png">
+                                <% } else { %>
+                                <% } %>
+                            </h4>
+                              <p class="card-text"><%= products[i].description %></p>
+                              <div class="row">
+                                      <div class="col-6">
+                                              &#x20b9 <%= products[i].price %>
+                                      </div>
+                                      <div class="col-3">
+                                              
+                                              <a href="" id="add-to-fav-btn" class="btn btn-primary btn-lg btn-block"><i class="fas fa-heart"></i></a>
+                                          </div>
+                                      <div class="col-3">
+                                          
+                                          <a href="/add-to-cart/<%= products[i].id %>" id="add-to-cart-btn" class="btn btn-primary btn-lg btn-block"><i class="fas fa-shopping-cart"></i></a>
+                                      </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <% } %>
+
+              </div>
+          </div>
+  
+    </div>
+</li>

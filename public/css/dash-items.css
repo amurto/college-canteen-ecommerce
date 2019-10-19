@@ -1,0 +1,52 @@
+p.card-text {
+    color: white;
+}
+
+#add-to-fav-btn {
+    background: rgba(255 , 105, 180, 0.6) !important;
+    color: black !important;
+    border: rgba(255 , 105, 180);
+    font-weight: bold;
+    font-size: medium;
+    width: 50px;
+}
+
+#add-to-fav-btn:hover {
+    background: rgba(255 , 105, 180) !important;
+    color: black !important;
+}
+
+#add-to-cart-btn {
+    background: rgba(255, 255, 255, 0.4) !important;
+    color: black !important;
+    border: white;
+    font-weight: bold;
+    font-size: medium;
+    width: 50px;
+}
+
+#add-to-cart-btn:hover {
+    background: #fff !important;
+    color: black !important;
+}
+
+.col-6 {
+    font-size: xx-large;
+}
+
+.card-img-top {
+    height: 175px;
+}
+
+#admin-go-btn {
+    background: rgba(255, 255, 255, 0.4) !important;
+    color: black !important;
+    border: white;
+    font-weight: bold;
+    font-size: medium;
+}
+
+#admin-go-btn:hover {
+    background: white !important;
+    color: black !important;
+}

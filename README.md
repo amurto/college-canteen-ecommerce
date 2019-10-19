@@ -1,2 +1,2 @@
-# my-canteen
+# college-canteen
  

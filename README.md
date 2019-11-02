@@ -1,2 +1,1 @@
-# college-canteen
- 
+# college-canteen-ecommerce-webapp

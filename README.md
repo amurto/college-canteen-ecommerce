@@ -40,7 +40,7 @@ Nowadays people don't have much time to spend in canteen by just there and waiti
 
 ### Prerequisites
 
-Install Node.js and npm using the link above. Follow instructions on their respecive websites. Npm is included with Node.js. Setup MongoDB locally or on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and get the connection string. Get Paytm API key for developers and paste these keys in the [.env](https://github.com/amurto/college-canteen-ecommerce/blob/master/client-canteen/.env) file in client-canteen folder.
+Install Node.js and npm using the link above. Follow instructions on their respecive websites. Npm is included with Node.js. Setup MongoDB locally or on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and get the connection string. This connection string has to be pasted in both configs of [Admin](https://github.com/amurto/college-canteen-ecommerce/blob/master/admin-canteen/config/keys.js) and [Client](https://github.com/amurto/college-canteen-ecommerce/blob/master/client-canteen/config/keys.js). Get Paytm API key for developers and paste these keys in the [.env](https://github.com/amurto/college-canteen-ecommerce/blob/master/client-canteen/.env) file in client-canteen folder.
 
 ### Instructions
 
